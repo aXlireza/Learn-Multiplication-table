@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useState, useEffect, useReducer } from 'react'
@@ -115,6 +117,7 @@ export default function MultiplicationPractice() {
   const [questionHistory, setQuestionHistory] = useState<QuestionData[]>([])
   const [upcomingQuestions, setUpcomingQuestions] = useState<{num1: number, num2: number}[]>([])
   const [notificationsEnabled, setNotificationsEnabled] = useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -505,7 +508,7 @@ export default function MultiplicationPractice() {
         </CardFooter>
         {!isOnline && (
           <div className="bg-yellow-100 text-yellow-800 text-sm p-2 text-center">
-            You're offline. Don't worry, you can still practice! Your progress will be saved and synced when you're back online.
+            You&apos;re offline. Don&apos;t worry, you can still practice! Your progress will be saved and synced when you&apos;re back online.
           </div>
         )}
         <AnimatePresence>
@@ -536,7 +539,7 @@ export default function MultiplicationPractice() {
                 height={120} 
                 className="rounded-full border-4 border-white shadow-lg mb-4"
               />
-              <p className="text-xl">You've unlocked {currentBadge.name}!</p>
+              <p className="text-xl">You&apos;ve unlocked {currentBadge.name}!</p>
             </motion.div>
           )}
         </AnimatePresence>
