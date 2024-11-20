@@ -162,23 +162,21 @@ export default function MultiplicationPractice() {
       scheduleNotification()
     }
 
-    if (supabase && supabase.auth) {
-    
-        supabase.auth.getSession().then(({ data: { session } }) => {
-        setUser(session?.user ?? null)
-      })
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null)
+    })
 
-      const { data: authListener } = supabase.auth.onAuthStateChange(
-        async (event:any, session:any) => {
-          const currentUser = session?.user
-          setUser(currentUser ?? null)
-        }
-      )
-    }
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      async (event:any, session:any) => {
+        const currentUser = session?.user
+        setUser(currentUser ?? null)
+      }
+    )
+
     return () => {
       window.removeEventListener('online', handleOnline)
       window.removeEventListener('offline', handleOffline)
-      // authListener?.subscription.unsubscribe()
+      authListener?.subscription.unsubscribe()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
