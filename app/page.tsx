@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { AlertCircle, HelpCircle, Clock, Check, X, Bell, LogIn, LogOut, UserPlus, ChevronUp, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { supabase } from '../supabaseClient'
+import Link from 'next/link'
 
 const badges = [
   { name: 'Heatblast', color: '#FF5722', image: '/placeholder.svg?height=100&width=100' },
@@ -373,7 +374,8 @@ export default function MultiplicationPractice() {
   const currentBadge = badges[state.level - 1]
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: currentBadge.color }}>
+    <div className="min-h-screen flex items-center justify-center p-4 flex-col" style={{ backgroundColor: currentBadge.color }}>
+      <Link href={"https://theenigmax.com"}>Developed by theEnigmax</Link>
       <Card className="w-full max-w-4xl mx-auto relative overflow-hidden">
         <CardHeader>
           <div className="flex items-center justify-between">
