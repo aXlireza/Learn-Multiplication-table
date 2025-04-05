@@ -12,6 +12,7 @@ import { AlertCircle, HelpCircle, Clock, Check, X, Bell, LogIn, LogOut, UserPlus
 import Image from 'next/image'
 import { supabase } from '../supabaseClient'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
 const badges = [
   { name: 'Heatblast', color: '#FF5722', image: '/placeholder.svg?height=100&width=100' },
